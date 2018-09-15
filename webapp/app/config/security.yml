@@ -46,6 +46,7 @@ security:
             pattern: ^/
             provider: domjudge_db_provider
             user_checker: domjudge.user_checker
+            entry_point: gewis.ip_authenticator
 
             anonymous: ~
             form_login:
@@ -59,6 +60,10 @@ security:
             logout:
                 path:   logout
                 target: /public
+            guard:
+                authenticators:
+                - gewis.ip_authenticator
+
 
     access_control:
       - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }

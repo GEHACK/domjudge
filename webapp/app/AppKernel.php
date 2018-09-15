@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new LegacyBundle\LegacyBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            new GewisBundle\GewisBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
