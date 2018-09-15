@@ -47,6 +47,7 @@ security:
             provider: domjudge_db_provider
             user_checker: DOMJudgeBundle\Security\UserChecker
             logout_on_user_change: true
+            entry_point: GewisBundle\Security\IpAuthenticator
 
             anonymous: ~
             form_login:
@@ -60,6 +61,10 @@ security:
             logout:
                 path:   logout
                 target: /public
+            guard:
+                authenticators:
+                - GewisBundle\Security\IpAuthenticator
+
 
     access_control:
       - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
